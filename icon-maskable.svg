@@ -15,20 +15,11 @@
       <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
     <filter id="bloom" x="-90%" y="-90%" width="280%" height="280%">
-      <feGaussianBlur stdDeviation="26"/>
-    </filter>
-    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
-      <feGaussianBlur stdDeviation="11" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feGaussianBlur stdDeviation="16"/>
     </filter>
     <filter id="node-glow" x="-130%" y="-130%" width="360%" height="360%">
-      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feGaussianBlur stdDeviation="8" result="b"/>
       <feMerge>
-        <feMergeNode in="b"/>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -65,12 +56,12 @@
         fill="url(#halo)" filter="url(#bloom)"/>
 
   <path d="M 102,72 C 134,200 206,322 256,412 C 232,322 188,200 166,72 Z"
-        fill="url(#vg)" filter="url(#glow)"/>
+        fill="url(#vg)"/>
   <path d="M 102,72 C 134,200 206,322 254,410 C 252,408 102,78 102,72 Z"
         fill="url(#shine)"/>
 
   <path d="M 410,72 C 378,200 306,322 256,412 C 280,322 326,200 346,72 Z"
-        fill="url(#vg)" filter="url(#glow)"/>
+        fill="url(#vg)"/>
   <path d="M 410,72 C 378,200 306,322 258,410 C 260,408 410,78 410,72 Z"
         fill="url(#shine)"/>
 

@@ -21,26 +21,15 @@
       <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Bloom detrás de la V -->
+    <!-- Bloom detrás de la V (reducido) -->
     <filter id="bloom" x="-90%" y="-90%" width="280%" height="280%">
-      <feGaussianBlur stdDeviation="28"/>
+      <feGaussianBlur stdDeviation="16"/>
     </filter>
 
-    <!-- Glow en los bordes de la V -->
-    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
-      <feGaussianBlur stdDeviation="12" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Glow fuerte en la punta -->
+    <!-- Glow suave en la punta -->
     <filter id="node-glow" x="-130%" y="-130%" width="360%" height="360%">
-      <feGaussianBlur stdDeviation="16" result="b"/>
+      <feGaussianBlur stdDeviation="8" result="b"/>
       <feMerge>
-        <feMergeNode in="b"/>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -95,14 +84,14 @@
 
   <!-- ── BRAZO IZQUIERDO (forma cónica rellena) ── -->
   <path d="M 84,52 C 118,192 196,330 256,422 C 230,330 182,192 158,52 Z"
-        fill="url(#vg)" filter="url(#glow)"/>
+        fill="url(#vg)" />
   <!-- Shine exterior izquierdo -->
   <path d="M 84,52 C 118,192 196,330 254,420 C 252,418 84,58 84,52 Z"
         fill="url(#shine)"/>
 
   <!-- ── BRAZO DERECHO (forma cónica rellena) ── -->
   <path d="M 428,52 C 394,192 316,330 256,422 C 282,330 330,192 354,52 Z"
-        fill="url(#vg)" filter="url(#glow)"/>
+        fill="url(#vg)" />
   <!-- Shine exterior derecho -->
   <path d="M 428,52 C 394,192 316,330 258,420 C 260,418 428,58 428,52 Z"
         fill="url(#shine)"/>

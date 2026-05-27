@@ -77,23 +77,23 @@
   <circle cx="108" cy="400" r="1"   fill="#348FFF"  opacity="0.20"/>
 
   <!-- ── BLOOM (halo cálido y colorido detrás de la V) ── -->
-  <path d="M 84,52 C 118,192 196,330 256,422 C 230,330 182,192 158,52 Z"
+  <path d="M 84,88 C 118,204 196,330 256,422 C 230,330 182,204 158,88 Z"
         fill="url(#halo)" filter="url(#bloom)"/>
-  <path d="M 428,52 C 394,192 316,330 256,422 C 282,330 330,192 354,52 Z"
+  <path d="M 428,88 C 394,204 316,330 256,422 C 282,330 330,204 354,88 Z"
         fill="url(#halo)" filter="url(#bloom)"/>
 
   <!-- ── BRAZO IZQUIERDO (forma cónica rellena) ── -->
-  <path d="M 84,52 C 118,192 196,330 256,422 C 230,330 182,192 158,52 Z"
+  <path d="M 84,88 C 118,204 196,330 256,422 C 230,330 182,204 158,88 Z"
         fill="url(#vg)" />
   <!-- Shine exterior izquierdo -->
-  <path d="M 84,52 C 118,192 196,330 254,420 C 252,418 84,58 84,52 Z"
+  <path d="M 84,88 C 118,204 196,330 254,420 C 252,418 84,94 84,88 Z"
         fill="url(#shine)"/>
 
   <!-- ── BRAZO DERECHO (forma cónica rellena) ── -->
-  <path d="M 428,52 C 394,192 316,330 256,422 C 282,330 330,192 354,52 Z"
+  <path d="M 428,88 C 394,204 316,330 256,422 C 282,330 330,204 354,88 Z"
         fill="url(#vg)" />
   <!-- Shine exterior derecho -->
-  <path d="M 428,52 C 394,192 316,330 258,420 C 260,418 428,58 428,52 Z"
+  <path d="M 428,88 C 394,204 316,330 258,420 C 260,418 428,94 428,88 Z"
         fill="url(#shine)"/>
 
   <!-- ── CONVERGENCIA ── -->

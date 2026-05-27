@@ -5,7 +5,7 @@
       <stop offset="50%"  stop-color="#0E0A3A"/>
       <stop offset="100%" stop-color="#030308"/>
     </radialGradient>
-    <linearGradient id="vg" x1="256" y1="72" x2="256" y2="412" gradientUnits="userSpaceOnUse">
+    <linearGradient id="vg" x1="256" y1="108" x2="256" y2="412" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#80FF59"/>
       <stop offset="42%"  stop-color="#348FFF"/>
       <stop offset="100%" stop-color="#8B76FF"/>
@@ -30,7 +30,7 @@
       <stop offset="65%"  stop-color="#348FFF" stop-opacity="0.30"/>
       <stop offset="100%" stop-color="#8B76FF" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="halo" x1="256" y1="72" x2="256" y2="412" gradientUnits="userSpaceOnUse">
+    <linearGradient id="halo" x1="256" y1="108" x2="256" y2="412" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#80FF59" stop-opacity="0.45"/>
       <stop offset="50%"  stop-color="#348FFF" stop-opacity="0.30"/>
       <stop offset="100%" stop-color="#8B76FF" stop-opacity="0.20"/>

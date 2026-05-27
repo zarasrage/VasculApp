@@ -9,7 +9,7 @@
     </radialGradient>
 
     <!-- V: lima → azul → violeta (colores de marca) -->
-    <linearGradient id="vg" x1="256" y1="52" x2="256" y2="422" gradientUnits="userSpaceOnUse">
+    <linearGradient id="vg" x1="256" y1="88" x2="256" y2="422" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#80FF59"/>
       <stop offset="42%"  stop-color="#348FFF"/>
       <stop offset="100%" stop-color="#8B76FF"/>
@@ -44,7 +44,7 @@
     </radialGradient>
 
     <!-- Halo sutil de fondo alrededor de la V -->
-    <linearGradient id="halo" x1="256" y1="52" x2="256" y2="422" gradientUnits="userSpaceOnUse">
+    <linearGradient id="halo" x1="256" y1="88" x2="256" y2="422" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#80FF59" stop-opacity="0.45"/>
       <stop offset="50%"  stop-color="#348FFF" stop-opacity="0.30"/>
       <stop offset="100%" stop-color="#8B76FF" stop-opacity="0.20"/>

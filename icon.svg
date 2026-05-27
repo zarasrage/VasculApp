@@ -1,35 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
 
-    <!-- Fondo: morado profundo a azul noche -->
-    <radialGradient id="bg" cx="42%" cy="32%" r="78%">
-      <stop offset="0%"   stop-color="#1E0A38"/>
-      <stop offset="55%"  stop-color="#0D1040"/>
-      <stop offset="100%" stop-color="#060914"/>
+    <!-- Fondo: morado marca → azul noche → negro -->
+    <radialGradient id="bg" cx="44%" cy="30%" r="80%">
+      <stop offset="0%"   stop-color="#2A1590"/>
+      <stop offset="50%"  stop-color="#0E0A3A"/>
+      <stop offset="100%" stop-color="#030308"/>
     </radialGradient>
 
-    <!-- V: amarillo-dorado → naranja → coral-rosa -->
+    <!-- V: lima → azul → violeta (colores de marca) -->
     <linearGradient id="vg" x1="256" y1="52" x2="256" y2="422" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="#FFE04B"/>
-      <stop offset="38%"  stop-color="#FF8C1A"/>
-      <stop offset="72%"  stop-color="#FF4D5E"/>
-      <stop offset="100%" stop-color="#E0266A"/>
+      <stop offset="0%"   stop-color="#80FF59"/>
+      <stop offset="42%"  stop-color="#348FFF"/>
+      <stop offset="100%" stop-color="#8B76FF"/>
     </linearGradient>
 
-    <!-- Brillo/reflejo superior de los brazos -->
-    <linearGradient id="shine" x1="256" y1="52" x2="256" y2="280" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="white" stop-opacity="0.42"/>
+    <!-- Reflejo/shine -->
+    <linearGradient id="shine" x1="256" y1="52" x2="256" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="white" stop-opacity="0.40"/>
       <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Bloom: resplandor suave y cálido detrás de la V -->
-    <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="26"/>
+    <!-- Bloom detrás de la V -->
+    <filter id="bloom" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="28"/>
     </filter>
 
-    <!-- Glow: halo medio en los bordes del brazo -->
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="11" result="b"/>
+    <!-- Glow en los bordes de la V -->
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="b"/>
@@ -37,9 +36,9 @@
       </feMerge>
     </filter>
 
-    <!-- Glow intenso para el punto de convergencia -->
-    <filter id="node-glow" x="-120%" y="-120%" width="340%" height="340%">
-      <feGaussianBlur stdDeviation="14" result="b"/>
+    <!-- Glow fuerte en la punta -->
+    <filter id="node-glow" x="-130%" y="-130%" width="360%" height="360%">
+      <feGaussianBlur stdDeviation="16" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="b"/>
@@ -47,70 +46,79 @@
       </feMerge>
     </filter>
 
-    <!-- Burst radial en la punta de la V -->
+    <!-- Burst radial en la convergencia -->
     <radialGradient id="burst" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#FFE04B"/>
-      <stop offset="30%"  stop-color="#FF8C1A" stop-opacity="0.8"/>
-      <stop offset="70%"  stop-color="#E0266A" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#E0266A" stop-opacity="0"/>
+      <stop offset="0%"   stop-color="#80FF59"/>
+      <stop offset="28%"  stop-color="#13C059" stop-opacity="0.75"/>
+      <stop offset="65%"  stop-color="#348FFF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#8B76FF" stop-opacity="0"/>
     </radialGradient>
+
+    <!-- Halo sutil de fondo alrededor de la V -->
+    <linearGradient id="halo" x1="256" y1="52" x2="256" y2="422" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#80FF59" stop-opacity="0.45"/>
+      <stop offset="50%"  stop-color="#348FFF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#8B76FF" stop-opacity="0.20"/>
+    </linearGradient>
 
   </defs>
 
   <!-- ── FONDO ── -->
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
 
-  <!-- Anillos sutiles centrados en la punta de la V (efecto sonar) -->
-  <circle cx="256" cy="422" r="55"  fill="none" stroke="#7C3AED" stroke-width="0.7" opacity="0.28"/>
-  <circle cx="256" cy="422" r="115" fill="none" stroke="#7C3AED" stroke-width="0.6" opacity="0.18"/>
-  <circle cx="256" cy="422" r="195" fill="none" stroke="#5B21B6" stroke-width="0.5" opacity="0.12"/>
-  <circle cx="256" cy="422" r="285" fill="none" stroke="#4C1D95" stroke-width="0.4" opacity="0.07"/>
+  <!-- Anillos de sonar centrados en la punta de la V -->
+  <circle cx="256" cy="422" r="52"  fill="none" stroke="#8B76FF" stroke-width="0.8" opacity="0.30"/>
+  <circle cx="256" cy="422" r="110" fill="none" stroke="#348FFF" stroke-width="0.6" opacity="0.20"/>
+  <circle cx="256" cy="422" r="188" fill="none" stroke="#13C059" stroke-width="0.5" opacity="0.13"/>
+  <circle cx="256" cy="422" r="278" fill="none" stroke="#80FF59" stroke-width="0.4" opacity="0.07"/>
 
-  <!-- Estrellas/partículas en el fondo -->
-  <circle cx="74"  cy="78"  r="1.5" fill="white" opacity="0.38"/>
-  <circle cx="422" cy="62"  r="2"   fill="white" opacity="0.28"/>
-  <circle cx="462" cy="205" r="1.5" fill="white" opacity="0.22"/>
-  <circle cx="52"  cy="315" r="1.2" fill="white" opacity="0.28"/>
-  <circle cx="478" cy="375" r="1.5" fill="white" opacity="0.18"/>
-  <circle cx="148" cy="462" r="1"   fill="white" opacity="0.22"/>
-  <circle cx="388" cy="452" r="1.5" fill="white" opacity="0.18"/>
-  <circle cx="318" cy="82"  r="1.2" fill="#FFD166" opacity="0.45"/>
-  <circle cx="192" cy="68"  r="1"   fill="#FF9130" opacity="0.35"/>
-  <circle cx="440" cy="130" r="1"   fill="#C084FC" opacity="0.3"/>
-  <circle cx="68"  cy="190" r="1.2" fill="#C084FC" opacity="0.25"/>
+  <!-- Partículas/estrellas en el fondo -->
+  <circle cx="72"  cy="76"  r="1.5" fill="#80FF59"  opacity="0.50"/>
+  <circle cx="420" cy="60"  r="1.8" fill="white"    opacity="0.30"/>
+  <circle cx="464" cy="208" r="1.2" fill="#348FFF"  opacity="0.45"/>
+  <circle cx="50"  cy="318" r="1.5" fill="white"    opacity="0.25"/>
+  <circle cx="476" cy="374" r="1.2" fill="#8B76FF"  opacity="0.35"/>
+  <circle cx="150" cy="464" r="1"   fill="white"    opacity="0.20"/>
+  <circle cx="386" cy="454" r="1.5" fill="#80FF59"  opacity="0.30"/>
+  <circle cx="316" cy="80"  r="1.2" fill="#13C059"  opacity="0.40"/>
+  <circle cx="190" cy="66"  r="1"   fill="#348FFF"  opacity="0.38"/>
+  <circle cx="442" cy="132" r="1"   fill="#8B76FF"  opacity="0.32"/>
+  <circle cx="66"  cy="192" r="1.2" fill="#80FF59"  opacity="0.28"/>
+  <circle cx="400" cy="300" r="1"   fill="white"    opacity="0.18"/>
+  <circle cx="108" cy="400" r="1"   fill="#348FFF"  opacity="0.20"/>
 
-  <!-- ── BLOOM (resplandor cálido detrás de la V) ── -->
+  <!-- ── BLOOM (halo cálido y colorido detrás de la V) ── -->
   <path d="M 84,52 C 118,192 196,330 256,422 C 230,330 182,192 158,52 Z"
-        fill="#FF8C1A" opacity="0.40" filter="url(#bloom)"/>
+        fill="url(#halo)" filter="url(#bloom)"/>
   <path d="M 428,52 C 394,192 316,330 256,422 C 282,330 330,192 354,52 Z"
-        fill="#FF8C1A" opacity="0.40" filter="url(#bloom)"/>
+        fill="url(#halo)" filter="url(#bloom)"/>
 
-  <!-- ── BRAZO IZQUIERDO ── -->
-  <!-- Forma cónica rellena: ancha arriba (84→159), punta abajo (256,422) -->
+  <!-- ── BRAZO IZQUIERDO (forma cónica rellena) ── -->
   <path d="M 84,52 C 118,192 196,330 256,422 C 230,330 182,192 158,52 Z"
         fill="url(#vg)" filter="url(#glow)"/>
-  <!-- Reflejo/shine en el borde exterior izquierdo -->
-  <path d="M 84,52 C 118,192 196,330 256,422 C 248,418 84,58 84,52 Z"
+  <!-- Shine exterior izquierdo -->
+  <path d="M 84,52 C 118,192 196,330 254,420 C 252,418 84,58 84,52 Z"
         fill="url(#shine)"/>
 
-  <!-- ── BRAZO DERECHO ── -->
+  <!-- ── BRAZO DERECHO (forma cónica rellena) ── -->
   <path d="M 428,52 C 394,192 316,330 256,422 C 282,330 330,192 354,52 Z"
         fill="url(#vg)" filter="url(#glow)"/>
-  <!-- Reflejo/shine en el borde exterior derecho -->
-  <path d="M 428,52 C 394,192 316,330 256,422 C 264,418 428,58 428,52 Z"
+  <!-- Shine exterior derecho -->
+  <path d="M 428,52 C 394,192 316,330 258,420 C 260,418 428,58 428,52 Z"
         fill="url(#shine)"/>
 
-  <!-- ── PUNTA DE LA V ── -->
-  <!-- Burst de luz -->
-  <circle cx="256" cy="422" r="58" fill="url(#burst)"/>
-  <!-- Punto central brillante -->
-  <circle cx="256" cy="422" r="20" fill="#FFE04B" filter="url(#node-glow)"/>
-  <circle cx="256" cy="422" r="11" fill="white" opacity="0.95"/>
+  <!-- ── CONVERGENCIA ── -->
+  <!-- Burst de luz en la punta -->
+  <circle cx="256" cy="422" r="62" fill="url(#burst)"/>
+  <!-- Anillo brillante -->
+  <circle cx="256" cy="422" r="22" fill="#80FF59" filter="url(#node-glow)"/>
+  <!-- Punto blanco central -->
+  <circle cx="256" cy="422" r="11" fill="white" opacity="0.96"/>
 
-  <!-- Destellos de lente (lens flare artístico) -->
-  <ellipse cx="256" cy="422" rx="1.2" ry="32" fill="white" opacity="0.22"/>
-  <ellipse cx="256" cy="422" rx="28" ry="1.2" fill="white" opacity="0.22"/>
-  <ellipse cx="256" cy="422" rx="0.8" ry="22" fill="white" opacity="0.12" transform="rotate(45 256 422)"/>
-  <ellipse cx="256" cy="422" rx="0.8" ry="22" fill="white" opacity="0.12" transform="rotate(-45 256 422)"/>
+  <!-- Lens flare artístico -->
+  <ellipse cx="256" cy="422" rx="1.2" ry="34" fill="white" opacity="0.20"/>
+  <ellipse cx="256" cy="422" rx="30"  ry="1.2" fill="white" opacity="0.20"/>
+  <ellipse cx="256" cy="422" rx="0.8" ry="22"  fill="white" opacity="0.11" transform="rotate(45 256 422)"/>
+  <ellipse cx="256" cy="422" rx="0.8" ry="22"  fill="white" opacity="0.11" transform="rotate(-45 256 422)"/>
 
 </svg>

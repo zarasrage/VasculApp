@@ -1,33 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <radialGradient id="bg" cx="42%" cy="32%" r="78%">
-      <stop offset="0%"   stop-color="#1E0A38"/>
-      <stop offset="55%"  stop-color="#0D1040"/>
-      <stop offset="100%" stop-color="#060914"/>
+    <radialGradient id="bg" cx="44%" cy="30%" r="80%">
+      <stop offset="0%"   stop-color="#2A1590"/>
+      <stop offset="50%"  stop-color="#0E0A3A"/>
+      <stop offset="100%" stop-color="#030308"/>
     </radialGradient>
-    <linearGradient id="vg" x1="256" y1="72" x2="256" y2="410" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="#FFE04B"/>
-      <stop offset="38%"  stop-color="#FF8C1A"/>
-      <stop offset="72%"  stop-color="#FF4D5E"/>
-      <stop offset="100%" stop-color="#E0266A"/>
+    <linearGradient id="vg" x1="256" y1="72" x2="256" y2="412" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#80FF59"/>
+      <stop offset="42%"  stop-color="#348FFF"/>
+      <stop offset="100%" stop-color="#8B76FF"/>
     </linearGradient>
     <linearGradient id="shine" x1="256" y1="72" x2="256" y2="260" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="white" stop-opacity="0.42"/>
+      <stop offset="0%"   stop-color="white" stop-opacity="0.40"/>
       <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
-    <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="24"/>
+    <filter id="bloom" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="26"/>
     </filter>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="10" result="b"/>
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="11" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="b"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="node-glow" x="-120%" y="-120%" width="340%" height="340%">
-      <feGaussianBlur stdDeviation="13" result="b"/>
+    <filter id="node-glow" x="-130%" y="-130%" width="360%" height="360%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
       <feMerge>
         <feMergeNode in="b"/>
         <feMergeNode in="b"/>
@@ -35,57 +34,52 @@
       </feMerge>
     </filter>
     <radialGradient id="burst" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#FFE04B"/>
-      <stop offset="30%"  stop-color="#FF8C1A" stop-opacity="0.8"/>
-      <stop offset="70%"  stop-color="#E0266A" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#E0266A" stop-opacity="0"/>
+      <stop offset="0%"   stop-color="#80FF59"/>
+      <stop offset="28%"  stop-color="#13C059" stop-opacity="0.75"/>
+      <stop offset="65%"  stop-color="#348FFF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#8B76FF" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="halo" x1="256" y1="72" x2="256" y2="412" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#80FF59" stop-opacity="0.45"/>
+      <stop offset="50%"  stop-color="#348FFF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#8B76FF" stop-opacity="0.20"/>
+    </linearGradient>
   </defs>
 
-  <!-- Fondo sin bordes (safe zone maskable) -->
   <rect width="512" height="512" fill="url(#bg)"/>
 
-  <!-- Anillos sonar -->
-  <circle cx="256" cy="410" r="55"  fill="none" stroke="#7C3AED" stroke-width="0.7" opacity="0.28"/>
-  <circle cx="256" cy="410" r="115" fill="none" stroke="#7C3AED" stroke-width="0.6" opacity="0.18"/>
-  <circle cx="256" cy="410" r="195" fill="none" stroke="#5B21B6" stroke-width="0.5" opacity="0.12"/>
-  <circle cx="256" cy="410" r="285" fill="none" stroke="#4C1D95" stroke-width="0.4" opacity="0.07"/>
+  <circle cx="256" cy="412" r="52"  fill="none" stroke="#8B76FF" stroke-width="0.8" opacity="0.30"/>
+  <circle cx="256" cy="412" r="110" fill="none" stroke="#348FFF" stroke-width="0.6" opacity="0.20"/>
+  <circle cx="256" cy="412" r="188" fill="none" stroke="#13C059" stroke-width="0.5" opacity="0.13"/>
+  <circle cx="256" cy="412" r="278" fill="none" stroke="#80FF59" stroke-width="0.4" opacity="0.07"/>
 
-  <!-- Estrellas -->
-  <circle cx="74"  cy="78"  r="1.5" fill="white" opacity="0.38"/>
-  <circle cx="422" cy="62"  r="2"   fill="white" opacity="0.28"/>
-  <circle cx="462" cy="205" r="1.5" fill="white" opacity="0.22"/>
-  <circle cx="52"  cy="315" r="1.2" fill="white" opacity="0.28"/>
-  <circle cx="318" cy="82"  r="1.2" fill="#FFD166" opacity="0.45"/>
-  <circle cx="192" cy="68"  r="1"   fill="#FF9130" opacity="0.35"/>
+  <circle cx="72"  cy="76"  r="1.5" fill="#80FF59" opacity="0.50"/>
+  <circle cx="420" cy="60"  r="1.8" fill="white"   opacity="0.30"/>
+  <circle cx="464" cy="208" r="1.2" fill="#348FFF" opacity="0.45"/>
+  <circle cx="316" cy="80"  r="1.2" fill="#13C059" opacity="0.40"/>
+  <circle cx="190" cy="66"  r="1"   fill="#348FFF" opacity="0.38"/>
 
-  <!-- Bloom -->
-  <path d="M 102,72 C 132,200 205,320 256,410 C 232,320 186,200 164,72 Z"
-        fill="#FF8C1A" opacity="0.40" filter="url(#bloom)"/>
-  <path d="M 410,72 C 380,200 307,320 256,410 C 280,320 326,200 348,72 Z"
-        fill="#FF8C1A" opacity="0.40" filter="url(#bloom)"/>
+  <path d="M 102,72 C 134,200 206,322 256,412 C 232,322 188,200 166,72 Z"
+        fill="url(#halo)" filter="url(#bloom)"/>
+  <path d="M 410,72 C 378,200 306,322 256,412 C 280,322 326,200 346,72 Z"
+        fill="url(#halo)" filter="url(#bloom)"/>
 
-  <!-- Brazo izquierdo -->
-  <path d="M 102,72 C 132,200 205,320 256,410 C 232,320 186,200 164,72 Z"
+  <path d="M 102,72 C 134,200 206,322 256,412 C 232,322 188,200 166,72 Z"
         fill="url(#vg)" filter="url(#glow)"/>
-  <path d="M 102,72 C 132,200 205,320 256,410 C 250,406 102,78 102,72 Z"
+  <path d="M 102,72 C 134,200 206,322 254,410 C 252,408 102,78 102,72 Z"
         fill="url(#shine)"/>
 
-  <!-- Brazo derecho -->
-  <path d="M 410,72 C 380,200 307,320 256,410 C 280,320 326,200 348,72 Z"
+  <path d="M 410,72 C 378,200 306,322 256,412 C 280,322 326,200 346,72 Z"
         fill="url(#vg)" filter="url(#glow)"/>
-  <path d="M 410,72 C 380,200 307,320 256,410 C 262,406 410,78 410,72 Z"
+  <path d="M 410,72 C 378,200 306,322 258,410 C 260,408 410,78 410,72 Z"
         fill="url(#shine)"/>
 
-  <!-- Punta convergencia -->
-  <circle cx="256" cy="410" r="55" fill="url(#burst)"/>
-  <circle cx="256" cy="410" r="18" fill="#FFE04B" filter="url(#node-glow)"/>
-  <circle cx="256" cy="410" r="10" fill="white" opacity="0.95"/>
+  <circle cx="256" cy="412" r="60" fill="url(#burst)"/>
+  <circle cx="256" cy="412" r="20" fill="#80FF59" filter="url(#node-glow)"/>
+  <circle cx="256" cy="412" r="10" fill="white" opacity="0.96"/>
 
-  <!-- Lens flare -->
-  <ellipse cx="256" cy="410" rx="1.2" ry="30" fill="white" opacity="0.22"/>
-  <ellipse cx="256" cy="410" rx="26"  ry="1.2" fill="white" opacity="0.22"/>
-  <ellipse cx="256" cy="410" rx="0.8" ry="20" fill="white" opacity="0.12" transform="rotate(45 256 410)"/>
-  <ellipse cx="256" cy="410" rx="0.8" ry="20" fill="white" opacity="0.12" transform="rotate(-45 256 410)"/>
-
+  <ellipse cx="256" cy="412" rx="1.2" ry="32" fill="white" opacity="0.20"/>
+  <ellipse cx="256" cy="412" rx="28"  ry="1.2" fill="white" opacity="0.20"/>
+  <ellipse cx="256" cy="412" rx="0.8" ry="21"  fill="white" opacity="0.11" transform="rotate(45 256 412)"/>
+  <ellipse cx="256" cy="412" rx="0.8" ry="21"  fill="white" opacity="0.11" transform="rotate(-45 256 412)"/>
 </svg>

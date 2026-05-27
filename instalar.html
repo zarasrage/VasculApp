@@ -134,7 +134,9 @@
   <div class="app-sub">Acceso vascular · Enfermería</div>
 
   <div class="qr-wrap">
-    <canvas id="qr-canvas"></canvas>
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fzarasrage.github.io%2FVasculApp%2F&color=0a0a1a&bgcolor=ffffff&margin=0&qzone=1"
+      width="220" height="220" alt="QR VasculApp" style="display:block;border-radius:4px">
   </div>
   <div class="scan-label">Escanea para instalar</div>
 
@@ -163,18 +165,6 @@
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-<script>
-  QRCode.toCanvas(
-    document.getElementById('qr-canvas'),
-    'https://zarasrage.github.io/VasculApp/',
-    {
-      width: 220,
-      margin: 0,
-      color: { dark: '#0a0a1a', light: '#ffffff' }
-    }
-  );
-</script>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+{
+  "name": "VasculApp",
+  "short_name": "VasculApp",
+  "description": "Herramienta de apoyo para enfermería vascular",
+  "start_url": "./vasculapp.html",
+  "display": "standalone",
+  "background_color": "#0a2a4a",
+  "theme_color": "#348FFF",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

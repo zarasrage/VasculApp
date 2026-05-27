@@ -7,7 +7,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#348FFF">
 <title>VasculApp</title>
-<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVmFzY3VsQXBwIiwic2hvcnRfbmFtZSI6IlZhc2N1bEFwcCIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMGEyYTRhIiwidGhlbWVfY29sb3IiOiIjMGEyYTRhIn0=">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -2123,6 +2124,11 @@ function clearFarmaSearch() {
 renderDiva();
 initDilutions();
 initInfo();
+
+// ===== SERVICE WORKER =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+}
 
 // ===== IMAGE MODAL =====
 function openImgModal(type) {

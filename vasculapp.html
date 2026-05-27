@@ -974,6 +974,56 @@
     from { transform: translateY(16px); opacity: 0; }
     to   { transform: translateY(0);    opacity: 1; }
   }
+
+  /* ===== CREDITS POPUP ===== */
+  #credits-overlay {
+    position: fixed; inset: 0; z-index: 8888;
+    background: rgba(3,3,8,0.72);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+  #credits-overlay.open { opacity: 1; pointer-events: all; }
+  #credits-card {
+    background: linear-gradient(160deg, #1a0d40 0%, #0d1040 60%, #060914 100%);
+    border: 1px solid rgba(128,255,89,0.15);
+    border-radius: 24px;
+    padding: 32px 28px 28px;
+    width: min(320px, 86vw);
+    text-align: center;
+    box-shadow: 0 0 60px rgba(52,143,255,0.18), 0 24px 48px rgba(0,0,0,0.6);
+    transform: scale(0.88) translateY(16px);
+    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+  }
+  #credits-overlay.open #credits-card { transform: scale(1) translateY(0); }
+  .credits-icon { width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 16px; display: block; box-shadow: 0 0 24px rgba(128,255,89,0.2); }
+  .credits-heart {
+    font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 4px; line-height: 1.5;
+  }
+  .credits-org {
+    font-family: 'Plus Jakarta Sans','DM Sans',sans-serif;
+    font-weight: 800; font-size: 15px;
+    background: linear-gradient(135deg, #80FF59 0%, #348FFF 55%, #8B76FF 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 20px; line-height: 1.3;
+  }
+  .credits-divider {
+    height: 1px; background: linear-gradient(90deg, transparent, rgba(128,255,89,0.2), rgba(52,143,255,0.2), transparent);
+    margin-bottom: 18px;
+  }
+  .credits-row { display: flex; flex-direction: column; margin-bottom: 14px; }
+  .credits-row:last-child { margin-bottom: 0; }
+  .credits-label { font-size: 11px; color: rgba(255,255,255,0.38); letter-spacing: 0.8px; margin-bottom: 2px; }
+  .credits-name { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.88); }
+  .credits-close {
+    margin-top: 24px; padding: 8px 24px;
+    background: rgba(128,255,89,0.08); border: 1px solid rgba(128,255,89,0.2);
+    border-radius: 20px; color: rgba(255,255,255,0.5);
+    font-size: 12px; cursor: pointer; display: inline-block;
+    transition: background 0.2s;
+  }
+  .credits-close:active { background: rgba(128,255,89,0.18); }
 </style>
 </head>
 <body>
@@ -983,6 +1033,25 @@
   <img src="icon.svg" id="splash-logo" alt="VasculApp">
   <div id="splash-title">VasculApp</div>
   <div id="splash-sub">created by Snoopy and Mimo</div>
+</div>
+
+<!-- CREDITS POPUP -->
+<div id="credits-overlay" onclick="closeCredits()">
+  <div id="credits-card" onclick="event.stopPropagation()">
+    <img src="icon.svg" class="credits-icon" alt="VasculApp">
+    <div class="credits-heart">Creado con mucho cariño por el</div>
+    <div class="credits-org">Comité de Acceso Vascular</div>
+    <div class="credits-divider"></div>
+    <div class="credits-row">
+      <span class="credits-label">Diseño y contenido</span>
+      <span class="credits-name">S. Yáñez</span>
+    </div>
+    <div class="credits-row">
+      <span class="credits-label">Programación y desarrollo</span>
+      <span class="credits-name">A. González</span>
+    </div>
+    <div class="credits-close" onclick="closeCredits()">cerrar</div>
+  </div>
 </div>
 
 <!-- IMAGE VIEWER MODAL -->
@@ -1007,7 +1076,7 @@
         </svg>
       </div>
       <div class="header-text">
-        <h1>VasculApp</h1>
+        <h1 onclick="showCredits()" style="cursor:pointer">VasculApp</h1>
         <p>Acceso vascular · Enfermería</p>
       </div>
     </div>
@@ -2177,6 +2246,18 @@ function clearFarmaSearch() {
 renderDiva();
 initDilutions();
 initInfo();
+
+// ===== CREDITS =====
+function showCredits() {
+  const o = document.getElementById('credits-overlay');
+  o.style.display = 'flex';
+  requestAnimationFrame(() => requestAnimationFrame(() => o.classList.add('open')));
+}
+function closeCredits() {
+  const o = document.getElementById('credits-overlay');
+  o.classList.remove('open');
+  setTimeout(() => o.style.display = 'none', 300);
+}
 
 // ===== SPLASH =====
 document.getElementById('splash').addEventListener('animationend', e => {

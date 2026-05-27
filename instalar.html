@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalar VasculApp</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 44% 20%, #2A1590 0%, #0E0A3A 52%, #030308 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 32px 20px;
+    color: white;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(128,255,89,0.14);
+    border-radius: 28px;
+    padding: 40px 36px;
+    max-width: 420px; width: 100%;
+    text-align: center;
+    box-shadow: 0 0 80px rgba(52,143,255,0.12), 0 32px 64px rgba(0,0,0,0.5);
+  }
+
+  .app-icon {
+    width: 88px; height: 88px;
+    border-radius: 22px;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 0 32px rgba(128,255,89,0.22);
+  }
+
+  .app-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800; font-size: 32px; letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #80FF59 0%, #348FFF 52%, #8B76FF 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+
+  .app-sub {
+    font-size: 13px; color: rgba(255,255,255,0.40);
+    letter-spacing: 0.5px; margin-bottom: 32px;
+  }
+
+  /* QR */
+  .qr-wrap {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    display: inline-block;
+    margin-bottom: 18px;
+    box-shadow: 0 0 40px rgba(128,255,89,0.15);
+  }
+
+  #qr-canvas { display: block; }
+
+  .scan-label {
+    font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(128,255,89,0.18), rgba(52,143,255,0.18), transparent);
+    margin-bottom: 24px;
+  }
+
+  /* Steps */
+  .steps-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.4px;
+    text-transform: uppercase; color: rgba(255,255,255,0.35);
+    margin-bottom: 16px;
+  }
+
+  .steps { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px; padding: 12px 14px;
+  }
+
+  .step-icon {
+    width: 28px; height: 28px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+  }
+
+  .step-android .step-icon { background: rgba(128,255,89,0.15); }
+  .step-ios .step-icon     { background: rgba(52,143,255,0.15); }
+
+  .step-text { flex: 1; }
+  .step-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 2px; }
+  .step-desc  { font-size: 12px; color: rgba(255,255,255,0.42); line-height: 1.4; }
+
+  /* URL chip -->
+  .url-chip {
+    margin-top: 28px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 7px 16px;
+    font-size: 12px; color: rgba(255,255,255,0.45);
+    word-break: break-all;
+  }
+
+  /* Print */
+  @media print {
+    body { background: white !important; }
+    .card { border: 2px solid #e2e8f0; box-shadow: none; }
+    .app-name { -webkit-text-fill-color: #348FFF; color: #348FFF; }
+    .step { background: #f8fafc; }
+    .url-chip { border-color: #e2e8f0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="icon.svg" class="app-icon" alt="VasculApp">
+  <div class="app-name">VasculApp</div>
+  <div class="app-sub">Acceso vascular · Enfermería</div>
+
+  <div class="qr-wrap">
+    <canvas id="qr-canvas"></canvas>
+  </div>
+  <div class="scan-label">Escanea para instalar</div>
+
+  <div class="divider"></div>
+
+  <div class="steps-title">¿Cómo instalar?</div>
+  <div class="steps">
+    <div class="step step-android">
+      <div class="step-icon">🤖</div>
+      <div class="step-text">
+        <div class="step-title">Android</div>
+        <div class="step-desc">Abre el enlace con Chrome → toca <strong>"Añadir a pantalla de inicio"</strong> en el banner o menú ⋮</div>
+      </div>
+    </div>
+    <div class="step step-ios">
+      <div class="step-icon">🍎</div>
+      <div class="step-text">
+        <div class="step-title">iPhone / iPad</div>
+        <div class="step-desc">Abre con Safari → toca <strong>Compartir ⬆</strong> → <strong>"Añadir a pantalla de inicio"</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="url-chip">
+    🔗 zarasrage.github.io/VasculApp
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+  QRCode.toCanvas(
+    document.getElementById('qr-canvas'),
+    'https://zarasrage.github.io/VasculApp/',
+    {
+      width: 220,
+      margin: 0,
+      color: { dark: '#0a0a1a', light: '#ffffff' }
+    }
+  );
+</script>
+
+</body>
+</html>

@@ -928,9 +928,62 @@
 
   /* ===== SCROLLBAR ===== */
   ::-webkit-scrollbar { width: 0; }
+
+  /* ===== SPLASH ===== */
+  #splash {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0;
+    background: radial-gradient(ellipse at 44% 30%, #2A1590 0%, #0E0A3A 52%, #030308 100%);
+    animation: splash-out 2.8s ease forwards;
+  }
+  #splash-logo {
+    width: 148px; height: 148px;
+    border-radius: 34px;
+    box-shadow: 0 0 60px rgba(128,255,89,0.25), 0 0 120px rgba(52,143,255,0.15);
+    animation: splash-pop 0.7s cubic-bezier(.34,1.56,.64,1) 0.15s both;
+  }
+  #splash-title {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-weight: 800; font-size: 46px; letter-spacing: -0.5px;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #80FF59 0%, #348FFF 50%, #8B76FF 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: splash-up 0.65s ease 0.45s both;
+  }
+  #splash-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; letter-spacing: 1.8px;
+    color: rgba(255,255,255,0.38);
+    margin-top: 10px;
+    text-transform: lowercase;
+    animation: splash-up 0.65s ease 0.72s both;
+  }
+  @keyframes splash-out {
+    0%   { opacity: 0; }
+    14%  { opacity: 1; }
+    78%  { opacity: 1; }
+    100% { opacity: 0; pointer-events: none; }
+  }
+  @keyframes splash-pop {
+    from { transform: scale(0.5) translateY(28px); opacity: 0; }
+    to   { transform: scale(1) translateY(0);      opacity: 1; }
+  }
+  @keyframes splash-up {
+    from { transform: translateY(16px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
 </style>
 </head>
 <body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <img src="icon.svg" id="splash-logo" alt="VasculApp">
+  <div id="splash-title">VasculApp</div>
+  <div id="splash-sub">created by Mimo</div>
+</div>
 
 <!-- IMAGE VIEWER MODAL -->
 <div class="img-modal-overlay" id="imgModal" onclick="closeImgModal(event)">
@@ -2124,6 +2177,9 @@ function clearFarmaSearch() {
 renderDiva();
 initDilutions();
 initInfo();
+
+// ===== SPLASH =====
+document.getElementById('splash').addEventListener('animationend', e => e.target.remove());
 
 // ===== SERVICE WORKER =====
 if ('serviceWorker' in navigator) {

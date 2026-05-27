@@ -84,13 +84,11 @@
   }
   .header-logo {
     width: 44px; height: 44px;
-    background: rgba(255,255,255,0.12);
     border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    flex-shrink: 0;
   }
-  .header-logo svg { width: 26px; height: 26px; }
+  .header-logo img { width: 44px; height: 44px; display: block; border-radius: 12px; }
   .header-text h1 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 22px;
@@ -1069,11 +1067,7 @@
   <header class="app-header">
     <div class="header-top">
       <div class="header-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v6m0 8v6"/>
-          <path d="M8 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"/>
-          <path d="M16 16c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4"/>
-        </svg>
+        <img src="icon.svg" alt="VasculApp">
       </div>
       <div class="header-text">
         <h1 onclick="showCredits()" style="cursor:pointer">VasculApp</h1>

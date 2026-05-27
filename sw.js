@@ -1,4 +1,4 @@
-const CACHE = 'vasculapp-v6';
+const CACHE = 'vasculapp-v7';
 const FILES = [
   './',
   './vasculapp.html',
